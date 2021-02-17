@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="google-signin-client_id" content="1055183797370-q9qssj7vehpa8ut7f3qeft4kb12l6p67.apps.googleusercontent.com.apps.googleusercontent.com">
+
+    <title>YouTube</title>
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    
+
+<script src="script.js" defer></script>
+<style>
+    .vertical-menu {
+  width: 150px; /* Set a width if you like */
+}
+
+.vertical-menu a {
+  background-color: #eee; /* Grey background color */
+  color: black; /* Black text color */
+  display: block; /* Make the links appear below each other */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc; /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+  background-color: #4CAF50; /* Add a green color to the "active/current" link */
+  color: white;
+}
+i.fa.fa-youtube-play{
+    color: red;
+    size: 1000px;
+}
+.flex-container{
+    top:0;
+    display: flex;
+}
+
+.flex-container::-webkit-scrollbar{
+    display:none;
+    }
+
+ 
+ .flex-container{
+     display: flex ;
+     overflow-x:auto;
+     
+ }
+ .flexx{
+     display:flex;
+ }
+    
+
+</style>
+
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+
+            <ul class="nav navbar-nav">
+
+                <i class="fa fa-youtube-play" aria-hidden="true"></i>
+            </ul>
+
+          <div class="navbar-header">
+                <a class="navbar-brand" href="#">YouTube</a>
+          </div>
+
+          <div class="mx-auto my-2 order-0 order-md-1 position-relative">
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="q" placeholder="Search">
+                </div>
+            </form>
+                <button type="submit" class="btn btn-default" onclick="search()"><i class="fa fa-search" aria-hidden="true"></i></button>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"></a></li>
+                    <li><a href="#"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></a></li>
+                    <li><button class="btn btn-primary">Sign In</button></li>
+                </ul>
+              
+        </div>
+        </div>
+
+        
+      </nav>
+      <div class="flexx">
+        <div class="vertical-menu">
+        
+        <a href="#">Home</a>
+        <a href="#">Trending</a>
+        <a href="#" onclick="alertt()">Subscriptions</a>
+        <a href="#" onclick="alertt()">Library</a>
+        <a href="#" onclick="alertt()">History</a>
+             </div>
+        <script>
+          function alertt(){
+              alert("Please Sign In");
+          }
+        </script>
+        <div class="container">
+            <div id="vidoes_list" class="flex-container">
+               
+        
+            
+    </div>
+</div>
+</div>
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
+      
+<a href="#" onclick="signOut();">Sign out</a>
+<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
+      
+</body>
+      
+</html>
